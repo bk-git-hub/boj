@@ -6,45 +6,29 @@ import java.io.InputStreamReader;
 public class boj1212 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String octalDigit = br.readLine();
+        String octal = br.readLine();
 
-        int len = octalDigit.length();
+        // 0이 입력되는 엣지 케이스 처리
+        if (octal.equals("0")) {
+            System.out.println(0);
+            return;
+        }
+
         StringBuilder sb = new StringBuilder();
-        int first = octalDigit.charAt(0)-'0';
-        if(first>=4){
-            sb.append(1);
+
+        // 2. 두 번째 자릿수부터 사용할 매핑 테이블
+        String[] octalToBinaryMap = {"000", "001", "010", "011", "100", "101", "110", "111"};
+
+        // 1. 첫 자릿수는 내장 함수를 이용해 불필요한 앞자리 0 없이 처리
+        int firstDigit = octal.charAt(0) - '0';
+        sb.append(Integer.toBinaryString(firstDigit));
+
+        // 3. 두 번째 자릿수부터는 매핑 테이블을 이용해 3자리를 꽉 채워 변환
+        for (int i = 1; i < octal.length(); i++) {
+            int digit = octal.charAt(i) - '0';
+            sb.append(octalToBinaryMap[digit]);
         }
 
-        if(first%4>=2 && first>=2){
-            sb.append(1);
-        } else {
-            sb.append(0);
-        }
-
-        if(first%2 ==1) {
-            sb.append(1);
-        } else {
-            sb.append(0);
-        }
-
-        for(int i=1;i<len;i++){
-            int cur = octalDigit.charAt(i)-'0';
-            if(cur>=4){
-                sb.append(1);
-            }else {
-                sb.append(0);
-            }
-            if(cur%4>=2){
-                sb.append(1);
-            } else {
-                sb.append(0);
-            }
-            if(cur%2 ==1) {
-                sb.append(1);
-            } else {
-                sb.append(0);
-            }
-        }
         System.out.println(sb);
     }
 }

@@ -1,4 +1,4 @@
-package not_solved;
+package unsolved;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -18,7 +18,7 @@ public class boj15663 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st=new StringTokenizer(br.readLine());
+        StringTokenizer st = new StringTokenizer(br.readLine());
 
         N = Integer.parseInt(st.nextToken());
         M = Integer.parseInt(st.nextToken());
@@ -27,7 +27,7 @@ public class boj15663 {
         System.out.print(sb);
     }
 
-    public static void build( int depth){
+    public static void build(int depth) {
 
     }
 }

@@ -1,4 +1,4 @@
-package not_solved;
+package unsolved;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -34,6 +34,7 @@ public class boj6064 {
         }
         System.out.print(sb);
     }
+
     private static int gcd(int a, int b) {
         while (b != 0) {
             int r = a % b;

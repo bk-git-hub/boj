@@ -1,4 +1,4 @@
-package not_solved;
+package unsolved;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -14,19 +14,19 @@ public class boj2225 {
         int N = Integer.parseInt(st.nextToken());
         int K = Integer.parseInt(st.nextToken());
 
-        final int MOD= 1_000_000_000;
-        long [][] dp = new long[K+1][N+1];
+        final int MOD = 1_000_000_000;
+        long[][] dp = new long[K + 1][N + 1];
 
-        for(int n=0;n<=N;n++){
+        for (int n = 0; n <= N; n++) {
             dp[1][n] = 1;
         }
 
-        for(int k=2;k<=K;k++){
-            for(int n = 0; n<=N;n++){
-                if(n==0){
+        for (int k = 2; k <= K; k++) {
+            for (int n = 0; n <= N; n++) {
+                if (n == 0) {
                     dp[k][n] = 1;
                 } else {
-                    dp[k][n] = (dp[k-1][n] + dp[k][n-1])%MOD;
+                    dp[k][n] = (dp[k - 1][n] + dp[k][n - 1]) % MOD;
                 }
             }
         }

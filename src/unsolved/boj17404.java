@@ -1,4 +1,4 @@
-package not_solved;
+package unsolved;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -32,7 +32,7 @@ public class boj17404 {
             prevR = currentR;
             prevG = currentG;
             prevB = currentB;
-            StringBuilder sb =new StringBuilder();
+            StringBuilder sb = new StringBuilder();
 
         }
         int[] total = new int[6];
@@ -44,8 +44,8 @@ public class boj17404 {
         total[5] = initB + prevG;
 
         int min = Integer.MAX_VALUE;
-        for(int i=0;i<6;i++){
-            if(total[i]<min){
+        for (int i = 0; i < 6; i++) {
+            if (total[i] < min) {
                 min = total[i];
             }
         }

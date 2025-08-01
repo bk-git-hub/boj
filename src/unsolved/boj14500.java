@@ -1,4 +1,4 @@
-package not_solved;
+package unsolved;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -49,10 +49,11 @@ public class boj14500 {
 
     /**
      * 'ㅜ' 모양을 제외한 나머지 모양을 탐색하는 DFS 함수
-     * @param r 현재 행
-     * @param c 현재 열
+     *
+     * @param r     현재 행
+     * @param c     현재 열
      * @param depth 현재까지 방문한 칸의 수
-     * @param sum 현재까지의 합
+     * @param sum   현재까지의 합
      */
     private static void dfs(int r, int c, int depth, int sum) {
         // 4개의 칸을 모두 방문했으면 최댓값 갱신 후 종료
@@ -79,6 +80,7 @@ public class boj14500 {
 
     /**
      * 'ㅜ' 모양 4가지 방향을 모두 체크하는 함수
+     *
      * @param r 중심 칸의 행
      * @param c 중심 칸의 열
      */

@@ -13,6 +13,8 @@ js = json.dumps([{k: q[k] for k in keys} for q in Q], ensure_ascii=False).replac
 base = tpl.replace('__HARNESS__', harness).replace('__QUESTIONS_JSON__', js)
 SKEL = ('<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">'
         '<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}body{margin:0;font:14px system-ui}img{max-width:100%}[hidden]{display:none!important}</style>'
+        '<link rel="icon" href="/icon.svg" type="image/svg+xml"><link rel="icon" href="/icon-192.png" sizes="192x192" type="image/png">'
+        '<link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/manifest.webmanifest"><meta name="theme-color" content="#2a57c0">'
         '</head><body>')
 open(os.path.join(here, 'artifact.html'), 'w', encoding='utf-8').write(base.replace('__COACH_MODE__', 'sample'))
 open(os.path.join(here, '..', 'coach-app', 'index.html'), 'w', encoding='utf-8').write(SKEL + base.replace('__COACH_MODE__', 'api') + '</body></html>')
